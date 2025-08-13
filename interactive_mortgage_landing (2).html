@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jerahme Wetzel - Your Trusted Mortgage Expert in Florida</title>
+    <meta name="description" content="18+ years of helping Florida families get home. Expert mortgage guidance with no corporate runaround - just real answers and results.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #081C2D 0%, #0F2B42 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.05)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.03)"/><circle cx="50" cy="10" r="1" fill="rgba(255,255,255,0.04)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.1;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 16px;
+            color: #94A3B8;
+            font-weight: 500;
+        }
+
+        .hero-text .description {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            color: #CBD5E1;
+            max-width: 90%;
+            line-height: 1.7;
+        }
+
+        .hero-text .trust-badge {
+            background: rgba(245, 158, 11, 0.2);
+            border: 1px solid rgba(245, 158, 11, 0.4);
+            color: #F59E0B;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 32px;
+            display: inline-block;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-image {
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-image-placeholder {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%);
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: #64748B;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+            color: white;
+            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Quick Quote Form */
+        .quick-quote {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .quote-form {
+            background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #374151;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #E5E7EB;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .success-message, .error-message {
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: none;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .success-message {
+            background: #10B981;
+            color: white;
+        }
+
+        .error-message {
+            background: #EF4444;
+            color: white;
+        }
+
+        /* Trust Indicators */
+        .trust-section {
+            background: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .trust-item {
+            padding: 30px 20px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+            border: 1px solid #E2E8F0;
+            transition: all 0.3s ease;
+        }
+
+        .trust-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .trust-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #081C2D;
+            margin-bottom: 8px;
+        }
+
+        .trust-label {
+            color: #64748B;
+            font-weight: 500;
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #081C2D;
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: #64748B;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%);
+            padding: 100px 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 30px;
+            font-size: 6rem;
+            color: #F59E0B;
+            font-family: Georgia, serif;
+            opacity: 0.3;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 24px;
+            color: #374151;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .author-info h4 {
+            font-weight: 600;
+            color: #081C2D;
+            margin-bottom: 4px;
+        }
+
+        .author-info p {
+            color: #64748B;
+            font-size: 0.9rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image-placeholder {
+            width: 300px;
+            height: 400px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #F1F5F9 0%, #E2E8F0 100%);
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: #64748B;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-text h3 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #081C2D;
+            margin-bottom: 24px;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: #64748B;
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        .credentials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 30px;
+        }
+
+        .credential {
+            background: linear-gradient(135deg, #081C2D 0%, #0F2B42 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #081C2D 0%, #0F2B42 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .contact .contact-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 16px;
+            color: #F59E0B;
+            font-weight: 600;
+        }
+
+        .contact p {
+            font-size: 1.2rem;
+            margin-bottom: 50px;
+            color: #CBD5E1;
+        }
+
+        .contact-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-btn {
+            padding: 20px 24px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .contact-btn.primary {
+            background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+            border-color: #F59E0B;
+        }
+
+        /* Footer */
+        .footer {
+            background: #081C2D;
+            color: white;
+            padding: 60px 0 30px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            color: #94A3B8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .quote-form {
+                padding: 30px 20px;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-buttons {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Your Trusted Florida Mortgage Expert</h1>
+                    <p class="subtitle">🏠 18 Years of Helping Dreams Come Home</p>
+                    <div class="trust-badge">⚡ Fast Pre-Approvals • 18+ Years Experience • Local Expert</div>
+                    <p class="description">No corporate runaround. No pushy sales tactics. Just expert guidance from someone who's helped hundreds of Florida families achieve their homeownership dreams for nearly two decades.</p>
+                    <div class="cta-buttons">
+                        <a href="#quote-form" class="btn btn-primary">
+                            🚀 Start My Free Pre-Approval
+                        </a>
+                        <a href="tel:+15551234567" class="btn btn-secondary">
+                            📞 Call Jerahme Direct
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-image-placeholder">
+                        📸 Add Jerahme's Professional Photo Here<br>
+                        <small>(Circular crop, professional attire)</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Quote Form -->
+    <section class="quick-quote" id="quote-form">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get Your Pre-Approval in Minutes</h2>
+                <p>Fill out this quick form and Jerahme will personally review your information within 24 hours</p>
+                
+                <!-- Pre-Approval Benefits -->
+                <div style="background: white; padding: 30px; border-radius: 16px; margin: 30px auto; max-width: 600px; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
+                    <h3 style="color: #081C2D; margin-bottom: 20px; text-align: center; font-size: 1.4rem;">Why Pre-Approval Matters</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 20px; text-align: center;">
+                        <div>
+                            <div style="font-size: 2rem; margin-bottom: 8px;">💪</div>
+                            <div style="font-weight: 600; color: #374151; font-size: 0.9rem;">Makes Offers Stronger</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 2rem; margin-bottom: 8px;">🔒</div>
+                            <div style="font-weight: 600; color: #374151; font-size: 0.9rem;">Locks Better Rates</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 2rem; margin-bottom: 8px;">⚡</div>
+                            <div style="font-weight: 600; color: #374151; font-size: 0.9rem;">Faster Closing</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 2rem; margin-bottom: 8px;">💰</div>
+                            <div style="font-weight: 600; color: #374151; font-size: 0.9rem;">Know Your Budget</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form class="quote-form" id="leadForm">
+                <div class="success-message" id="successMessage">
+                    🎉 Thanks! Jerahme will personally review your info and reach out shortly.
+                </div>
+                <div class="error-message" id="errorMessage">
+                    ❌ Something went wrong. Please try again or call Jerahme directly.
+                </div>
+                
+                <!-- Quick starter questions -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="loanPurpose">Are you buying or refinancing? *</label>
+                        <select id="loanPurpose" name="loanPurpose" required>
+                            <option value="">Select one</option>
+                            <option value="Buying">Buying a home</option>
+                            <option value="Refinancing">Refinancing</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="firstTime">Is this your first home? *</label>
+                        <select id="firstTime" name="firstTime" required>
+                            <option value="">Select one</option>
+                            <option value="Yes">Yes, first time</option>
+                            <option value="No">No, I've owned before</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="loanAmount">Desired Loan Amount</label>
+                        <select id="loanAmount" name="loanAmount">
+                            <option value="">Select Amount</option>
+                            <option value="Under $200k">Under $200,000</option>
+                            <option value="$200k-$400k">$200,000 - $400,000</option>
+                            <option value="$400k-$600k">$400,000 - $600,000</option>
+                            <option value="$600k-$800k">$600,000 - $800,000</option>
+                            <option value="Over $800k">Over $800,000</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="timeframe">When do you want to close?</label>
+                        <select id="timeframe" name="timeframe">
+                            <option value="">Select Timeframe</option>
+                            <option value="ASAP">As soon as possible</option>
+                            <option value="30 days">Within 30 days</option>
+                            <option value="60 days">30-60 days</option>
+                            <option value="90+ days">60+ days</option>
+                            <option value="Just exploring">Just exploring options</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    🚀 Start My Free Pre-Approval
+                </button>
+                
+                <p style="text-align: center; font-size: 0.9rem; color: #6B7280; margin-top: 15px;">
+                    <strong>No commitment. Quick review by Jerahme within 24 hours.</strong>
+                    <br>Your information is secure and will never be shared.
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Trust Indicators -->
+    <section class="trust-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Trusted by Hundreds of Florida Families</h2>
+                <p>Over 18 years of proven results and satisfied homeowners</p>
+            </div>
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <div class="trust-icon">🏆</div>
+                    <div class="trust-number">18+</div>
+                    <div class="trust-label">Years Experience</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">🏠</div>
+                    <div class="trust-number">500+</div>
+                    <div class="trust-label">Families Helped</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">⭐</div>
+                    <div class="trust-number">4.9★</div>
+                    <div class="trust-label">Client Rating</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">💰</div>
+                    <div class="trust-number">$50M+</div>
+                    <div class="trust-label">Loans Closed</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Clients Say About Jerahme</h2>
+                <p>Real reviews from real families who trusted Jerahme with their biggest investment</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">Jerahme Wetzel was a pleasure to work with. From the pre-approval letter and throughout the entire process, Jerahme made himself available for questions or concerns. This professionalism extended even on his days off and over weekends. Some of the process was a bit confusing, but one phone call was all it took to make me feel at ease. Jerahme would be my first choice for any future lending needs.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">HR</div>
+                        <div class="author-info">
+                            <h4>Higinio Rodriguez</h4>
+                            <p>Home Purchase • Navarre, FL</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">When you are self employed, there are a ton of obstacles when you go through the regular banks, that will find every reason not to approve you! We are grateful that Jerahme with USA Mortgage worked with us through all of the details and made it happen! Thank you and we look forward to working with you in the future! Will highly recommend to all of our self-employed friends!!!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">A</div>
+                        <div class="author-info">
+                            <h4>Alena</h4>
+                            <p>Self-Employed • Tallahassee, FL</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">Jerahme helped my wife and I with the purchase of our first home. He made the whole process very simple and stress free. I had an issue with something that was reported on my credit report incorrectly and he was able to get it removed for me. That ensured we were able to get a low interest rate. I would recommend him to anyone purchasing a home!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">PB</div>
+                        <div class="author-info">
+                            <h4>Phillip Bergerman</h4>
+                            <p>First-Time Buyer • Griffin, GA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="about-image-placeholder">
+                        📸 Add Jerahme's<br>Professional Photo<br>
+                        <small>(Standing/sitting pose,<br>office or outdoor setting)</small>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h3>Meet Jerahme Wetzel</h3>
+                    <p><strong>Florida-born and raised</strong>, Jerahme has been helping families navigate the mortgage process since 2006. With over <strong>18 years of experience</strong>, he's seen every market condition and knows how to get deals done.</p>
+                    <p>What sets Jerahme apart? <strong>No sales fluff — just real answers.</strong> He takes the time to understand your unique situation and finds the best solution for your family's needs. Whether you're a first-time buyer, moving up, or refinancing, Jerahme provides the personal attention and expertise you deserve.</p>
+                    <p>Based in Gulf Breeze, Florida, Jerahme serves clients throughout the Panhandle and beyond, combining local market knowledge with national lending resources.</p>
+                    <div class="credentials">
+                        <span class="credential">Licensed Since 2006</span>
+                        <span class="credential">NMLS Certified</span>
+                        <span class="credential">Local Expert</span>
+                        <span class="credential">500+ Families Helped</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p class="contact-subtitle">Two Ways to Connect:</p>
+            <p>Quick questions? Text us. Ready to apply? Call Jerahme directly.</p>
+            <div class="contact-buttons">
+                <a href="sms:+15551234567" class="contact-btn primary">
+                    💬 Quick Questions<br>
+                    <small>Text for Fast Response</small>
+                </a>
+                <a href="tel:
