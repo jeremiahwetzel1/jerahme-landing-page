@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jerahme Wetzel - Florida's Mortgage Expert</title>
-    <meta name="description" content="Fast, friendly mortgage help for Florida families. Get pre-approved or ask a question—no pushy sales, just real answers.">
+    <title>Jerahme Wetzel - Mortgage Expert</title>
+    <meta name="description" content="Fast, friendly mortgage help for families and buyers nationwide. Get pre-approved or ask a question—no pushy sales, just real answers.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* Base styles */
@@ -27,9 +27,10 @@
             padding-top: 60px;
         }
         .hero .profile-pic {
-            width: 140px; height: 140px; border-radius: 50%; background: #e2e8f0;
-            margin: 0 auto 28px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: #64748B;
-            box-shadow: 0 8px 32px rgba(0,0,0,.18);
+            width: 180px; height: 180px; border-radius: 50%; background: #e2e8f0;
+            margin: 0 auto 28px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; color: #64748B;
+            box-shadow: 0 12px 40px rgba(0,0,0,.22);
+            border: 5px solid #F59E0B;
         }
         .hero h1 {
             font-size: 2.8rem;
@@ -56,6 +57,14 @@
         .btn-secondary { background: rgba(255,255,255,0.09); color: #fff; border: 2px solid rgba(255,255,255,0.13); }
         .hero .quick-contact {
             display: flex; gap: 24px; justify-content: center; margin-top: 22px; font-size: 1rem; color: #dbeafe;
+        }
+        .hero .quick-contact a { color: #F59E0B; text-decoration: underline; }
+
+        .hero .connect-link {
+            margin-top: 18px;
+            font-size: 1rem;
+            color: #F59E0B;
+            display: block;
         }
 
         /* Section header */
@@ -89,11 +98,13 @@
         .trust-metric .icon { font-size: 1.7rem; margin-bottom: 8px; }
         .trust-metric .value { font-size: 1.25rem; font-weight: 700; color: #081C2D; margin-bottom: 4px; }
         .trust-metric .label { font-size: 0.96rem; color: #64748B; font-weight: 500; }
-        .trust-section .nmls { margin-top: 18px; color: #64748B; font-size: 0.98rem; }
 
         /* Testimonials */
         .testimonials { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); padding: 52px 0; }
-        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px; margin-top: 34px; }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 34px; }
+        @media (max-width: 860px) {
+            .testimonials-grid { grid-template-columns: 1fr; }
+        }
         .testimonial-card {
             background: #fff; padding: 24px 22px; border-radius: 16px; box-shadow: 0 4px 18px rgba(0,0,0,.08);
             position: relative; transition: box-shadow .2s;
@@ -152,8 +163,6 @@
         }
         .contact-btn.primary { background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); border-color: #F59E0B; color: #fff; }
         .contact-btn.social { background: rgba(255,255,255,0.14); border-color: #CBD5E1; color: #fff; }
-        .contact .socials { margin-top: 28px; display: flex; gap: 24px; justify-content: center; }
-        .contact .social-icon { font-size: 2rem; color: #F59E0B; opacity: 0.87; }
         .contact .info-list { margin: 18px 0 0 0; font-size: 1.02rem; color: #CBD5E1; }
 
         /* Footer */
@@ -180,18 +189,18 @@
         <div class="profile-pic">
             📸 Add Jerahme's Photo
         </div>
-        <h1>Florida Mortgage Made Easy</h1>
+        <h1>Mortgage Made Easy</h1>
         <div class="subtitle">Get Pre-Approved Fast • Ask Anything About Your Home Journey</div>
-        <div class="trust-badge">18+ Years • 500+ Families • Local Expert • NMLS# 228710</div>
+        <div class="trust-badge">Licensed Since 2010 • 15 Years Experience • 1000+ Families Helped • $200M+ Loans Closed</div>
         <div class="cta-buttons">
             <a href="#lead-form" class="btn btn-primary">🚀 Get Pre-Approved</a>
             <a href="#question-form" class="btn btn-secondary">❓ Ask a Question</a>
         </div>
         <div class="quick-contact">
-            <span>📞 <b>Work:</b> (850) 202-9690</span>
-            <span>📱 <b>Cell:</b> (404) 783-9049</span>
+            <a href="tel:8502029690">📞 <b>Work:</b> (850) 202-9690</a>
             <span>✉️ <b>Email:</b> <a href="mailto:jerahme.wetzel@northstarlending.com" style="color:#F59E0B;">jerahme.wetzel@northstarlending.com</a></span>
         </div>
+        <a href="#contact" class="connect-link">→ Connect with Jerahme</a>
     </section>
 
     <!-- Lead Form -->
@@ -204,8 +213,8 @@
             <form class="lead-form" action="https://formspree.io/f/{your-form-id}" method="POST">
                 <div class="form-row">
                     <div>
-                        <label for="loanPurpose">Buying or Refinancing? *</label>
-                        <select id="loanPurpose" name="loanPurpose" required>
+                        <label for="loanPurposeMain">Buying or Refinancing? *</label>
+                        <select id="loanPurposeMain" name="loanPurposeMain" required>
                             <option value="">Select</option>
                             <option value="Buying">Buying a home</option>
                             <option value="Refinancing">Refinancing</option>
@@ -242,6 +251,50 @@
                     <label for="howHeard">How did you hear about Jerahme?</label>
                     <input type="text" id="howHeard" name="howHeard">
                 </div>
+                <!-- New Optional Fields -->
+                <div>
+                    <label for="desiredAmount">Desired Loan Amount</label>
+                    <select id="desiredAmount" name="desiredAmount">
+                        <option value="">Select Amount</option>
+                        <option value="Under $200k">Under $200,000</option>
+                        <option value="$200k-$400k">$200,000 - $400,000</option>
+                        <option value="$400k-$600k">$400,000 - $600,000</option>
+                        <option value="$600k-$800k">$600,000 - $800,000</option>
+                        <option value="Over $800k">Over $800,000</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="desiredPurpose">Loan Purpose</label>
+                    <select id="desiredPurpose" name="desiredPurpose">
+                        <option value="">Select Purpose</option>
+                        <option value="Home Purchase">Home Purchase</option>
+                        <option value="Refinance">Refinance</option>
+                        <option value="Cash Out Refinance">Cash Out Refinance</option>
+                        <option value="Construction">Construction</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="desiredClose">When Do You Want to Close?</label>
+                    <select id="desiredClose" name="desiredClose">
+                        <option value="">Select Timeframe</option>
+                        <option value="ASAP">ASAP</option>
+                        <option value="Within 30 days">Within 30 days</option>
+                        <option value="30-60 days">30-60 days</option>
+                        <option value="60+ days">60+ days</option>
+                        <option value="Just exploring">Just exploring options</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="estimatedCredit">Estimated Credit Score</label>
+                    <select id="estimatedCredit" name="estimatedCredit">
+                        <option value="">Select Range</option>
+                        <option value="740+">740+</option>
+                        <option value="700-739">700–739</option>
+                        <option value="660-699">660–699</option>
+                        <option value="620-659">620–659</option>
+                        <option value="Below 620">Below 620</option>
+                    </select>
+                </div>
                 <button type="submit" class="submit-btn">🚀 Get Pre-Approved</button>
                 <div class="note">
                     <strong>Quick review by Jerahme within 24 hours.</strong><br>
@@ -255,23 +308,18 @@
     <section class="trust-section">
         <div class="container">
             <div class="section-header">
-                <h2>Why Florida Families Trust Jerahme</h2>
+                <h2>Why Clients Trust Jerahme</h2>
                 <p>Real reviews, proven results, and all the credentials you need.</p>
             </div>
             <div class="trust-badges">
-                <img src="placeholder-google.png" alt="Google Reviews" class="trust-badge-img">
                 <img src="placeholder-linkedin.png" alt="LinkedIn" class="trust-badge-img">
                 <img src="placeholder-facebook.png" alt="Facebook" class="trust-badge-img">
-                <img src="placeholder-nmls.png" alt="NMLS" class="trust-badge-img">
+                <img src="placeholder-instagram.png" alt="Instagram" class="trust-badge-img">
             </div>
             <div class="trust-metrics">
-                <div class="trust-metric"><div class="icon">🏆</div><div class="value">18+</div><div class="label">Years Experience</div></div>
-                <div class="trust-metric"><div class="icon">🏠</div><div class="value">500+</div><div class="label">Families Helped</div></div>
-                <div class="trust-metric"><div class="icon">⭐</div><div class="value">4.9★</div><div class="label">Client Rating</div></div>
-                <div class="trust-metric"><div class="icon">💰</div><div class="value">$50M+</div><div class="label">Loans Closed</div></div>
-            </div>
-            <div class="nmls">
-                NMLS #228710 • NorthStar Lending, LLC
+                <div class="trust-metric"><div class="icon">🏆</div><div class="value">15</div><div class="label">Years Licensed</div></div>
+                <div class="trust-metric"><div class="icon">🏠</div><div class="value">1000+</div><div class="label">Families Helped</div></div>
+                <div class="trust-metric"><div class="icon">💰</div><div class="value">$200M+</div><div class="label">Loans Closed</div></div>
             </div>
         </div>
     </section>
@@ -314,6 +362,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Add your fourth review here -->
             </div>
         </div>
     </section>
@@ -327,14 +376,14 @@
                 </div>
                 <div class="about-text">
                     <h3>Meet Jerahme Wetzel</h3>
-                    <p><strong>Florida-born and raised.</strong> Jerahme has helped families navigate the mortgage process since 2006. With <strong>18+ years of experience</strong>, he’s seen every market and knows how to get deals done.</p>
+                    <p>Jerahme has helped families and buyers navigate the mortgage process since 2010. With <strong>15 years of experience</strong>, he’s seen every market and knows how to get deals done.</p>
                     <p>No sales fluff—just real answers. Jerahme takes the time to understand your situation and finds the best solution for you. First-time buyer, move-up, refinance, or more—he provides the personal attention and expertise you deserve.</p>
-                    <p>Based in Gulf Breeze, Florida, Jerahme serves clients throughout the Panhandle and beyond, combining local market knowledge with national lending resources.</p>
+                    <p>Licensed nationwide, Jerahme serves clients and partners wherever you are, combining local market knowledge with national lending resources.</p>
                     <div class="credentials">
-                        <span class="credential">Licensed Since 2006</span>
+                        <span class="credential">Licensed Since 2010</span>
                         <span class="credential">NMLS #228710</span>
                         <span class="credential">NorthStar Lending</span>
-                        <span class="credential">500+ Families Helped</span>
+                        <span class="credential">1000+ Families Helped</span>
                     </div>
                 </div>
             </div>
@@ -362,6 +411,8 @@
                 <input type="text" id="name" name="name" required>
                 <label for="email">Email *</label>
                 <input type="email" id="email" name="email" required>
+                <label for="phone">Phone *</label>
+                <input type="tel" id="phone" name="phone" required>
                 <label for="question">Your Question *</label>
                 <textarea id="question" name="question" required></textarea>
                 <button type="submit" class="submit-btn">❓ Ask Now</button>
@@ -377,25 +428,18 @@
     <section class="contact" id="contact">
         <div class="container">
             <h2>Connect With Jerahme</h2>
-            <p class="contact-subtitle">Call, text, email, or DM anytime!</p>
+            <p class="contact-subtitle">Call, email, or DM anytime!</p>
             <p>We reply fast during business hours and keep your info private.</p>
             <div class="contact-buttons">
                 <a href="tel:8502029690" class="contact-btn primary">📞 Call Now<br><small>(Work: 850-202-9690)</small></a>
-                <a href="sms:4047839049" class="contact-btn primary">💬 Text Jerahme<br><small>(Cell: 404-783-9049)</small></a>
                 <a href="mailto:jerahme.wetzel@northstarlending.com" class="contact-btn primary">✉️ Email</a>
                 <a href="#" class="contact-btn social">🌐 Facebook</a>
                 <a href="#" class="contact-btn social">💼 LinkedIn</a>
-                <a href="#" class="contact-btn social">🟢 Google Reviews</a>
-            </div>
-            <div class="socials">
-                <a href="#" class="social-icon" title="Facebook">🌐</a>
-                <a href="#" class="social-icon" title="LinkedIn">💼</a>
-                <a href="#" class="social-icon" title="Google">🟢</a>
+                <a href="#" class="contact-btn social">📸 Instagram</a>
             </div>
             <div class="info-list">
                 <div>NMLS #228710 • NorthStar Lending, LLC</div>
-                <div>Gulf Breeze, FL</div>
-                <div>Work: 850-202-9690 | Cell: 404-783-9049 | Email: jerahme.wetzel@northstarlending.com</div>
+                <div>Work: 850-202-9690 | Email: jerahme.wetzel@northstarlending.com</div>
             </div>
         </div>
     </section>
@@ -407,7 +451,7 @@
             <a href="https://wetzelteam.com" target="_blank">Old Website</a>
             <a href="#">Facebook</a>
             <a href="#">LinkedIn</a>
-            <a href="#">Google Reviews</a>
+            <a href="#">Instagram</a>
         </div>
         <div class="footer-bottom">
             © 2025 Jerahme Wetzel. NMLS #228710. NorthStar Lending LLC.<br>
