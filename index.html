@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jerahme Wetzel - Mortgage Expert</title>
+    <meta name="description" content="Fast, friendly mortgage help for families and buyers nationwide. Get pre-approved or ask a question—no pushy sales, just real answers.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: #222; background: #F8FAFC; line-height: 1.6; }
+        a { color: inherit; text-decoration: none; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 18px; }
+
+        /* Hero */
+        .hero {
+            min-height: 90vh;
+            background: linear-gradient(135deg, #081C2D 60%, #0F2B42 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            position: relative;
+            padding-top: 60px;
+        }
+        .hero .profile-pic {
+            width: 180px; height: 180px; border-radius: 50%; background: #e2e8f0;
+            margin: 0 auto 28px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; color: #64748B;
+            box-shadow: 0 12px 40px rgba(0,0,0,.22);
+            border: 5px solid #F59E0B;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 22px;
+            background: linear-gradient(135deg, #fff 50%, #e0e7ff 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero .subtitle { font-size: 1.25rem; color: #dbeafe; margin-bottom: 18px; }
+        .hero .trust-badge {
+            background: rgba(245, 158, 11, 0.18);
+            border: 1px solid rgba(245, 158, 11, 0.34);
+            color: #F59E0B;
+            padding: 7px 16px; border-radius: 25px; font-size: 1rem; font-weight: 600; margin-bottom: 24px; display: inline-block;
+        }
+        .hero .cta-buttons {
+            display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; margin-bottom: 22px;
+        }
+        .btn {
+            padding: 15px 32px; border-radius: 12px; font-size: 1.1rem; font-weight: 600; transition: all .22s;
+            border: none; cursor: pointer; display: flex; align-items: center; gap: 7px; box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+        .btn-primary { background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); color: #fff; }
+        .btn-secondary { background: rgba(255,255,255,0.09); color: #fff; border: 2px solid rgba(255,255,255,0.13); }
+        .hero .quick-contact {
+            display: flex; gap: 24px; justify-content: center; margin-top: 22px; font-size: 1rem; color: #dbeafe;
+        }
+        .hero .quick-contact a { color: #F59E0B; text-decoration: underline; }
+
+        .hero .connect-link {
+            margin-top: 18px;
+            font-size: 1rem;
+            color: #F59E0B;
+            display: block;
+        }
+
+        /* Section header */
+        .section-header { text-align: center; margin-bottom: 42px; }
+        .section-header h2 { font-size: 2.1rem; font-weight: 700; color: #081C2D; margin-bottom: 10px; }
+        .section-header p { font-size: 1.09rem; color: #64748B; }
+
+        /* Lead Form */
+        .lead-section { background: #fff; padding: 56px 0 32px; }
+        .lead-form { background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); padding: 36px 32px; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,.09); max-width: 480px; margin: 0 auto; }
+        .lead-form label { font-weight: 500; color: #374151; display: block; margin-bottom: 5px; }
+        .lead-form input, .lead-form select, .lead-form textarea {
+            width: 100%; padding: 12px; border: 2px solid #E5E7EB; border-radius: 10px; font-size: 1rem; margin-bottom: 18px;
+        }
+        .lead-form textarea { min-height: 60px; }
+        .lead-form .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .lead-form .submit-btn { width: 100%; padding: 15px; background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); color: #fff; border: none; border-radius: 10px; font-size: 1.1rem; font-weight: 600; cursor: pointer; margin-top: 8px; }
+        .lead-form .note { text-align: center; font-size: 0.95rem; color: #6B7280; margin-top: 13px; }
+
+        /* Trust Proof */
+        .trust-section { background: #fff; padding: 48px 0 38px; text-align: center; }
+        .trust-badges {
+            display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; margin: 22px 0;
+        }
+        .trust-badge-img { height: 36px; width: auto; opacity: 0.82; border-radius: 6px; }
+        .trust-metrics { display: flex; gap: 34px; justify-content: center; flex-wrap: wrap; margin-top: 22px; }
+        .trust-metric {
+            background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+            border: 1px solid #E2E8F0; border-radius: 14px; padding: 20px 18px; min-width: 130px;
+        }
+        .trust-metric .icon { font-size: 1.7rem; margin-bottom: 8px; }
+        .trust-metric .value { font-size: 1.25rem; font-weight: 700; color: #081C2D; margin-bottom: 4px; }
+        .trust-metric .label { font-size: 0.96rem; color: #64748B; font-weight: 500; }
+
+        /* Testimonials */
+        .testimonials { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); padding: 52px 0; }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 34px; }
+        @media (max-width: 860px) {
+            .testimonials-grid { grid-template-columns: 1fr; }
+        }
+        .testimonial-card {
+            background: #fff; padding: 24px 22px; border-radius: 16px; box-shadow: 0 4px 18px rgba(0,0,0,.08);
+            position: relative; transition: box-shadow .2s;
+        }
+        .testimonial-card:hover { box-shadow: 0 8px 28px rgba(0,0,0,.12); }
+        .testimonial-text { font-size: 1.04rem; color: #374151; font-style: italic; margin-bottom: 16px; }
+        .testimonial-author { display: flex; align-items: center; gap: 13px; }
+        .author-avatar { width: 38px; height: 38px; border-radius: 50%; background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+            display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 1.08rem; }
+        .author-info h4 { font-weight: 600; color: #081C2D; margin-bottom: 2px; font-size: 1rem; }
+        .author-info p { color: #64748B; font-size: 0.93rem; }
+
+        /* About */
+        .about { background: #fff; padding: 54px 0; }
+        .about-content { display: grid; grid-template-columns: 1fr 2fr; gap: 38px; align-items: center; }
+        .about-image-placeholder { width: 230px; height: 300px; border-radius: 18px; background: linear-gradient(135deg, #F1F5F9 0%, #E2E8F0 100%);
+            margin: 0 auto; display: flex; align-items: center; justify-content: center; font-size: 1.08rem; color: #64748B; }
+        .about-text h3 { font-size: 1.55rem; font-weight: 700; color: #081C2D; margin-bottom: 17px; }
+        .about-text p { font-size: 1.04rem; color: #64748B; margin-bottom: 14px; line-height: 1.65; }
+        .credentials { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+        .credential {
+            background: linear-gradient(135deg, #081C2D 0%, #0F2B42 100%);
+            color: white; padding: 7px 14px; border-radius: 22px; font-size: 0.92rem; font-weight: 500;
+        }
+        @media (max-width: 860px) {
+            .about-content { grid-template-columns: 1fr; gap: 28px; text-align: center; }
+            .about-image-placeholder { margin-bottom: 18px; }
+        }
+
+        /* Partner Invitation */
+        .partners { background: #E2E8F0; padding: 46px 0; text-align: center; }
+        .partners h3 { font-size: 1.28rem; color: #081C2D; font-weight: 600; margin-bottom: 14px; }
+        .partners p { font-size: 1.04rem; color: #64748B; margin-bottom: 22px; }
+        .partners .btn { margin-top: 8px; }
+
+        /* Open Q&A Form */
+        .question-section { background: #fff; padding: 48px 0 36px; }
+        .question-form { background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); padding: 30px 28px; border-radius: 16px; box-shadow: 0 4px 18px rgba(0,0,0,.08); max-width: 480px; margin: 0 auto; }
+        .question-form label { font-weight: 500; color: #374151; display: block; margin-bottom: 5px; }
+        .question-form input, .question-form textarea {
+            width: 100%; padding: 12px; border: 2px solid #E5E7EB; border-radius: 10px; font-size: 1rem; margin-bottom: 18px;
+        }
+        .question-form textarea { min-height: 60px; }
+        .question-form .submit-btn { width: 100%; padding: 15px; background: linear-gradient(135deg, #0F2B42 0%, #081C2D 100%); color: #fff; border: none; border-radius: 10px; font-size: 1.1rem; font-weight: 600; cursor: pointer; margin-top: 8px; }
+        .question-form .note { text-align: center; font-size: 0.95rem; color: #6B7280; margin-top: 13px; }
+
+        /* Contact */
+        .contact { background: linear-gradient(135deg, #081C2D 0%, #0F2B42 100%); color: white; padding: 54px 0; text-align: center; }
+        .contact h2 { font-size: 1.85rem; font-weight: 700; margin-bottom: 13px; }
+        .contact .contact-subtitle { font-size: 1.08rem; margin-bottom: 11px; color: #F59E0B; font-weight: 600; }
+        .contact p { font-size: 1.09rem; margin-bottom: 29px; color: #CBD5E1; }
+        .contact-buttons { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; max-width: 700px; margin: 0 auto; }
+        .contact-btn {
+            padding: 18px 22px; background: rgba(255,255,255,0.09); border: 2px solid rgba(255,255,255,0.18);
+            border-radius: 14px; color: white; font-weight: 600; font-size: 1.1rem; transition: all .22s; display: flex; align-items: center; gap: 11px;
+        }
+        .contact-btn.primary { background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); border-color: #F59E0B; color: #fff; }
+        .contact-btn.social { background: rgba(255,255,255,0.14); border-color: #CBD5E1; color: #fff; }
+        .contact .info-list { margin: 18px 0 0 0; font-size: 1.02rem; color: #CBD5E1; }
+
+        /* Footer */
+        .footer { background: #081C2D; color: white; padding: 40px 0 22px; text-align: center; font-size: 0.98rem; }
+        .footer .footer-logo { font-size: 1.3rem; font-weight: 700; margin-bottom: 14px; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.11); padding-top: 18px; color: #94A3B8; }
+        .footer .links { margin-top: 10px; display: flex; gap: 14px; justify-content: center; font-size: 0.98rem; }
+
+        /* Responsive */
+        @media (max-width: 680px) {
+            .hero h1 { font-size: 2.07rem; }
+            .section-header h2, .contact h2 { font-size: 1.37rem; }
+            .lead-form, .question-form { padding: 18px 8px; }
+            .testimonials-grid, .about-content { grid-template-columns: 1fr; }
+            .contact-buttons { flex-direction: column; gap: 14px; }
+            .trust-metrics { flex-direction: column; gap: 18px; }
+            .trust-badges { flex-direction: column; gap: 13px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="profile-pic">
+            <img src="https://storage.googleapis.com/msgsndr/bTvqGwhxsMeTGtI2UvsI/media/693b3130ed957f822e118e86.png" alt="Jerahme Wetzel" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+        </div>
+        <h1>Mortgage Made Easy</h1>
+        <div class="subtitle">Get Pre-Approved Fast • Ask Anything About Your Home Journey</div>
+        <div class="trust-badge">Licensed Since 2010 • 15 Years Experience • 1000+ Families Helped • $200M+ Loans Closed</div>
+        <div class="cta-buttons">
+            <a href="#lead-form" class="btn btn-primary">🚀 Get Pre-Approved</a>
+            <a href="#question-form" class="btn btn-secondary">❓ Ask a Question</a>
+        </div>
+        <div class="quick-contact">
+            <a href="tel:8502029690">📞 <b>Work:</b> (850) 202-9690</a>
+            <span>✉️ <b>Email:</b> <a href="mailto:jerahme.wetzel@northstarlending.com" style="color:#F59E0B;">jerahme.wetzel@northstarlending.com</a></span>
+        </div>
+        <a href="#contact" class="connect-link">→ Connect with Jerahme</a>
+    </section>
+
+    <!-- Lead Form -->
+    <section class="lead-section" id="lead-form">
+        <div class="container">
+            <div class="section-header">
+                <h2>Start Your Pre-Approval in Minutes</h2>
+                <p>No commitment, just fast answers from Jerahme. Your info is 100% secure.</p>
+            </div>
+<div class="lead-form">
+  <iframe
+      src="https://links.northstarlending.ai/widget/form/y5p7oIuWrLIGI2MQ6W9s"
+      style="width:100%;height:802px;border:none;border-radius:3px"
+      id="inline-y5p7oIuWrLIGI2MQ6W9s" 
+      data-layout="{'id':'INLINE'}"
+      data-trigger-type="alwaysShow"
+      data-trigger-value=""
+      data-activation-type="alwaysActivated"
+      data-activation-value=""
+      data-deactivation-type="neverDeactivate"
+      data-deactivation-value=""
+      data-form-name="Jerahme Landing Page Pre-approval Form"
+      data-layout-iframe-id="inline-y5p7oIuWrLIGI2MQ6W9s"
+      data-form-id="y5p7oIuWrLIGI2MQ6W9s"
+      title="Jerahme Landing Page Pre-approval Form"
+  ></iframe>
+</div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Clients Trust Jerahme</h2>
+                <p>Real reviews, proven results, and all the credentials you need.</p>
+            </div>
+            <div class="trust-metrics">
+                <div class="trust-metric"><div class="icon">🏆</div><div class="value">15</div><div class="label">Years Licensed</div></div>
+                <div class="trust-metric"><div class="icon">🏠</div><div class="value">1000+</div><div class="label">Families Helped</div></div>
+                <div class="trust-metric"><div class="icon">💰</div><div class="value">$200M+</div><div class="label">Loans Closed</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Clients Say</h2>
+                <p>Real reviews from families who trusted Jerahme with their home financing.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">Jerahme Wetzel was a pleasure to work with. From the pre-approval letter and throughout the entire process, Jerahme made himself available for questions or concerns. This professionalism extended even on his days off and over weekends. Some of the process was a bit confusing, but one phone call was all it took to make me feel at ease. Jerahme would be my first choice for any future lending needs.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">HR</div>
+                        <div class="author-info">
+                            <h4>Higinio Rodriguez</h4>
+                            <p>Home Purchase • Navarre, FL</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">When you are self employed, there are a ton of obstacles when you go through the regular banks, that will find every reason not to approve you! We are grateful that Jerahme with USA Mortgage worked with us through all of the details and made it happen! Thank you and we look forward to working with you in the future! Will highly recommend to all of our self-employed friends!!!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">A</div>
+                        <div class="author-info">
+                            <h4>Alena</h4>
+                            <p>Self-Employed • Tallahassee, FL</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">Jerahme helped my wife and I with the purchase of our first home. He made the whole process very simple and stress free. I had an issue with something that was reported on my credit report incorrectly and he was able to get it removed for me. That ensured we were able to get a low interest rate. I would recommend him to anyone purchasing a home!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">PB</div>
+                        <div class="author-info">
+                            <h4>Phillip Bergerman</h4>
+                            <p>First-Time Buyer • Griffin, GA</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">Jerahme Wetzel, a HOMESTAR loan officer was an amazing part of my purchase process. I was denied by several lenders before I had the honor to work with him. He dedicated many many man hours towards the close of my home loan. He was dealt an interesting hand with my loan process and remained true to his word. Very confident and knowledgeable. I am forever grateful to him and his team. I AM A HOME OWNER!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">PB</div>
+                        <div class="author-info">
+                            <h4>CaseyBackhaus</h4>
+                            <p>First-Time Buyer • Pensacola, FL</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image-placeholder">
+                    <img src="https://storage.googleapis.com/msgsndr/bTvqGwhxsMeTGtI2UvsI/media/693b313b53781f5e2c2ddc98.jpeg" alt="Jerahme Outdoor Photo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 18px;">
+                </div>
+                <div class="about-text">
+                    <h3>Meet Jerahme Wetzel</h3>
+                    <p>Jerahme has helped families and buyers navigate the mortgage process since 2010. With <strong>15 years of experience</strong>, he’s seen every market and knows how to get deals done.</p>
+                    <p>No sales fluff—just real answers. Jerahme takes the time to understand your situation and finds the best solution for you. First-time buyer, move-up, refinance, or more—he provides the personal attention and expertise you deserve.</p>
+                    <p>Licensed nationwide, Jerahme serves clients and partners wherever you are, combining local market knowledge with national lending resources.</p>
+                    <div class="credentials">
+                        <span class="credential">Licensed Since 2010</span>
+                        <span class="credential">NMLS #228710</span>
+                        <span class="credential">NorthStar Lending</span>
+                        <span class="credential">1000+ Families Helped</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partner Invitation -->
+    <section class="partners">
+        <div class="container">
+            <h3>Builders, Realtors, & Business Partners</h3>
+            <p>Looking for a trusted, responsive lending partner? Let’s talk about building together. Jerahme is open to collaborations, referrals, and new relationships!</p>
+            <a href="#contact" class="btn btn-primary">🤝 Partner With Jerahme</a>
+        </div>
+    </section>
+
+    <!-- Open Q&A Form -->
+    <section class="question-section" id="question-form">
+        <div class="container">
+            <div class="section-header">
+                <h2>Ask a Question or Bring Us Your Scenario</h2>
+                <p>Not sure where to start? Ask anything—mortgage, building, real estate, or partnership. We’ll reply fast!</p>
+            </div>
+            <div class="question-form">
+             <iframe
+                  src="https://links.northstarlending.ai/widget/form/cThwH5yfnnNRy8isHWlq"
+                  style="width:100%;height:802px;border:none;border-radius:3px"
+                  id="inline-cThwH5yfnnNRy8isHWlq" 
+                  data-layout="{'id':'INLINE'}"
+                  data-trigger-type="alwaysShow"
+                  data-trigger-value=""
+                  data-activation-type="alwaysActivated"
+                  data-activation-value=""
+                  data-deactivation-type="neverDeactivate"
+                  data-deactivation-value=""
+                  data-form-name="Jerahme Landing Page Ask a Question Form"
+                  data-layout-iframe-id="inline-cThwH5yfnnNRy8isHWlq"
+                  data-form-id="cThwH5yfnnNRy8isHWlq"
+                  title="Jerahme Landing Page Ask a Question Form"
+          ></iframe>
+    </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Connect With Jerahme</h2>
+            <p class="contact-subtitle">Call, email, or DM anytime!</p>
+            <p>We reply fast during business hours and keep your info private.</p>
+            <div class="contact-buttons">
+              <a href="tel:8502029690" class="contact-btn primary">📞 Call Now</a>
+              <a href="mailto:jerahme.wetzel@northstarlending.com" class="contact-btn primary">✉️ Email</a>
+              <a href="#" class="contact-btn social">📸 Instagram</a>
+              <a href="https://www.tiktok.com/@wetzel.team?_r=1&_t=ZP-9297zeJPPN1" class="contact-btn social">🎵 TikTok</a>
+              <a href="#" class="contact-btn social">🌐 Facebook</a>
+              <a href="#" class="contact-btn social">💼 LinkedIn</a>
+            </div>
+            <div class="info-list">
+                <div>NMLS #228710 • NorthStar Lending, LLC</div>
+                <div>Work: 850-202-9690 | Email: jerahme.wetzel@northstarlending.com</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-logo">Jerahme Wetzel | Mortgage Expert</div>
+        <div class="footer-bottom">
+            © 2025 Jerahme Wetzel. NMLS #228710. NorthStar Lending LLC.<br>
+            This site is for informational purposes only. All loans subject to approval. Privacy guaranteed.
+        </div>
+   </footer>
+<script src="https://links.northstarlending.ai/js/form_embed.js"></script>
+    </body>
+</html>
